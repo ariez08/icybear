@@ -26,12 +26,20 @@ class cek(commands.Cog) :
 
     @commands.command()
     @commands.cooldown(1, 30, commands.BucketType.user)
+    async def pagi(self, ctx):
+        if 0<time.hour<=10:
+            await ctx.send(random.choice(pagi).strip())
+        else :
+            await ctx.reply("Udah bukan pagi atuh bang")     
+
+    @commands.command()
+    @commands.cooldown(1, 30, commands.BucketType.user)
     async def siang(self, ctx):
         if 10<time.hour<15:
             await ctx.send(random.choice(siang).strip())
         else :
-            await ctx.reply("Sekarang bukan siang atuh")     
-
+            await ctx.reply("Sekarang bukan siang atuh")  
+    
     @commands.command(name="!fatah")
     @commands.cooldown(1, 10, commands.BucketType.user)
     async def sfsffsf(self, ctx):
