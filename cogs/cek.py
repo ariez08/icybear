@@ -4,8 +4,6 @@ import random
 import discord
 from discord.ext import commands
 
-time = datetime.datetime.now()
-jam = time.hour +7
 url = "https://pastebin.com/raw/"
 
 class cek(commands.Cog) :
@@ -25,12 +23,16 @@ class cek(commands.Cog) :
         await ctx.send(format(ctx.author.display_name)) #Username tanpa mention
     @commands.command(name="!jam")
     async def sofmsdad(self, ctx):
+        time = datetime.datetime.now()
+        jam = time.hour +7
         await ctx.send(time.strftime("%H:%M:%S")) #jam
 # ========================================
 
     @commands.command(name="Pagi", aliases=["morning", "Morning", "pagii", "pagi"])
     @commands.cooldown(1, 30, commands.BucketType.user)
     async def pagi(self, ctx):
+        time = datetime.datetime.now()
+        jam = time.hour +7
         if jam<=10:
             pagi = random.choice(requests.get(url+"2ZNJyFa7").text.split(';')).strip()
             await ctx.send(pagi+" **"+ctx.author.display_name+"**!")
@@ -42,6 +44,8 @@ class cek(commands.Cog) :
     @commands.command(name="Siang", aliases=["Syang", "syang","siang"])
     @commands.cooldown(1, 30, commands.BucketType.user)
     async def siang(self, ctx):
+        time = datetime.datetime.now()
+        jam = time.hour +7
         if 10<jam<=15:
             siang = random.choice(requests.get(url+"eMaHmi3F").text.split(';')).strip()
             await ctx.send("Hai **"+ctx.author.display_name+"!** "+siang)
@@ -53,6 +57,8 @@ class cek(commands.Cog) :
     @commands.command(name="Sore", aliases=["soreh", "Soreh","sore"])
     @commands.cooldown(1, 30, commands.BucketType.user)
     async def sore(self, ctx):
+        time = datetime.datetime.now()
+        jam = time.hour +7
         if 15<=jam<=18:
             sore = random.choice(requests.get(url+"2MHh6tmF").text.split(';')).strip()
             await ctx.send("Hai **"+ctx.author.display_name+"!** "+sore)
@@ -64,6 +70,8 @@ class cek(commands.Cog) :
     @commands.command(name="Malam", aliases=["wan an", "Wan","wan", "night","Night", "Guden", "guden","malam"])
     @commands.cooldown(1, 30, commands.BucketType.user)
     async def malam(self, ctx):
+        time = datetime.datetime.now()
+        jam = time.hour +7
         if 18<=jam:
             malam = random.choice(requests.get(url+"NScPb7hS").text.split(';')).strip()
             await ctx.send("Hai **"+ctx.author.display_name+"!** "+malam)
@@ -72,12 +80,12 @@ class cek(commands.Cog) :
     
     @commands.command(name="!fatah")
     @commands.cooldown(1, 10, commands.BucketType.user)
-    async def sfsffsf(self, ctx):
+    async def fatah(self, ctx):
         await ctx.reply("Jomblo")
 
     @commands.command(name="!dimas", aliases=["#dimas","*dimas","di mas"])
     @commands.cooldown(1, 10, commands.BucketType.user)
-    async def aurnrgsg(self, ctx):
+    async def dimas(self, ctx):
         await ctx.reply("Mabar slebew")
 
 async def setup(bot):
