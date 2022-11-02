@@ -23,6 +23,9 @@ class cek(commands.Cog) :
     @commands.command(name="!nama")
     async def sofmsdad(self, ctx):
         await ctx.send(format(ctx.author.display_name)) #Username tanpa mention
+    @commands.command(name="!jam")
+    async def sofmsdad(self, ctx):
+        await ctx.send(jam) #jam
 # ========================================
 
     @commands.command(name="Pagi", aliases=["morning", "Morning", "pagii", "pagi"])
