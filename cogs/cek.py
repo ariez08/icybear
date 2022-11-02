@@ -17,7 +17,7 @@ class cek(commands.Cog) :
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("Bot is Online")
+        print("Cogs is Online")
     
     @commands.command()
     @commands.cooldown(1, 10, commands.BucketType.user)
@@ -28,7 +28,7 @@ class cek(commands.Cog) :
     @commands.cooldown(1, 30, commands.BucketType.user)
     async def pagi(self, ctx):
         if 0<time.hour<=10:
-            await ctx.send(random.choice(pagi).strip())
+            await ctx.send(random.choice(pagi).strip(), time)
         else :
             await ctx.reply("Udah bukan pagi atuh bang")     
 
